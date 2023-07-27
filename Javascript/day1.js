@@ -83,3 +83,107 @@ function getValue(){
 }
 test(testing)
 
+// ================= Spread Operator ================================
+const globalPlayer = {
+     id:0,
+     name:"Bot",
+     powerlevel:50
+}
+"const player1 = globalPlayer;"
+const player1 ={...globalPlayer}; // making the copy
+"const player1 = Object.assign({},globalPlayer) // making the copy of another method using object"
+player1.powerlevel = 1000000
+"console.log(player1); // 1000000 "
+"console.log(globalPlayer) // 1000000 immutable, changes effects parent"
+console.log(player1); // 1000000
+console.log(globalPlayer) // 50  // because of spread operator it wont be affect
+
+// ! using spread operator which property we are spreading that property will make a copy
+
+const spread1 = ["thousi","safiya","safwan"]
+const spread2 = ["shezin","elnino","lanina"]
+const nestedarray = [1,2,3,4,5]
+const spreaded = [...spread1,...spread2,"pushing",nestedarray]
+console.log(spreaded);
+
+// ======================= Rest Operator  =======================
+const rest = {
+     id :0,
+     name : "still",
+     rank : 1
+}
+
+//  ! using rest paramter we can make like spread if we have necessary key needed ,we can make others as rest in object type
+
+const {id,...othersin} = rest
+console.log(id,othersin); // 0  {name: 'still', rank: 1}
+
+
+
+// =================== Arrow Function =================================
+
+const myFunc= value => value + 5 // if we have one value we can use this
+
+console.log(myFunc(8));
+
+// ========================  For Each =====================
+
+const listobj1 = [
+     {
+          name : "Thousi",
+          place : "kasargod",
+          age : 10
+     },
+     {
+          name : "safiya",
+          place : "kasargod",
+          age : 19
+     },
+     {
+          name : "shezin",
+          place : "kasargod",
+          age : 13
+     },
+];
+// for(let i=0;i<listobj1.length;i++){
+//      console.log(listobj1[i].name)
+// }
+
+// ! using for each we dont need to loop over the object     
+listobj1.forEach((value,index,array)=>{
+     console.log(value); //{name: 'Thousi', place: 'kasargod', age: 10} \n {name: 'safiya', place: 'kasargod', age: 19} \n {name: 'shezin', place: 'kasargod', age: 13}
+     console.log(index); // 0, 1, 2
+     console.log(array); // (3) [{…}, {…}, {…}] total 3 copies for each obj
+
+});
+
+// =====================  Map =================================
+// const newArray = []
+// for(let i = 0 ;i<listobj1.length;i++){
+//      newArray.push(listobj1[i].place)
+// }
+// ! Using map we can iterate through the listobject and  return specific key value as a new array
+
+const newArray= listobj1.map((value)=> value.age);
+console.log(newArray); // [10, 19, 13]
+
+// ================= Filter ===================================
+
+// ! Using filter we can take specific value based on a consition
+const newFilter= listobj1.filter((value)=> value.age === 10);
+console.log(newFilter); // [10, 19, 13]
+
+
+// =================== Reduce =================================
+
+// ! To Perform Calculation to make single value 4 arguments take
+
+const numberArray = [1,2,3,4,5,5,6,8,9]
+// for (let i=0;i<numberArray.length;i++){
+//      total += numberArray[i];
+// } 
+// console.log(total);
+
+ // 4 arguments total,value,index,array
+const newReduce = numberArray.reduce((total,value)=> total+value,0); // 0 is declaring total = 0
+console.log(newReduce); // [10, 19, 13]
