@@ -7,6 +7,7 @@ import Welcome from './components/welcome';
 import Todo from './components/Todo';
 import Counter from './components/Counter';
 import Forms from './components/Forms';
+import List from './components/List';
 // function Apps() {
 //   return (
 //     <div className="App">
@@ -33,7 +34,8 @@ class App extends Component {
         <button onClick={this.handleChange}>Click Here</button>
         <Todo sendingData={this.state.myString}/> */}
         {/* <Counter /> */}
-        <Forms />
+        {/* <Forms /> */}
+        <List />
       </div>
     )   // # JSX Type
   }
