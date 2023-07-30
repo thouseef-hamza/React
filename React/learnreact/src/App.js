@@ -4,6 +4,9 @@ import Hello from './components/hello';
 import React, { Component } from 'react';
 import { Greet } from './components/greet';
 import Welcome from './components/welcome';
+import Todo from './components/Todo';
+import Counter from './components/Counter';
+import Forms from './components/Forms';
 // function Apps() {
 //   return (
 //     <div className="App">
@@ -13,19 +16,26 @@ import Welcome from './components/welcome';
 // }
 
 // export default App;
-
-class App extends Component{
+class App extends Component {
+  state = {
+     myString : "Hello Thousi" ,
+  }
+  handleChange = () => {
+    this.setState({
+      myString : "Safiya"
+    })  // state changing
+  }
   render() {
     return (
       <div className='App'>
-        <Hello />
+        {/* <Hello />
         <Welcome />
+        <button onClick={this.handleChange}>Click Here</button>
+        <Todo sendingData={this.state.myString}/> */}
+        {/* <Counter /> */}
+        <Forms />
       </div>
     )   // # JSX Type
-    return React.createElement(
-      'div', null, 
-      React.createElement('h1', {id:'hello',className:'dummyClass'},'thousi'))
-    
   }
 }
 export default App
