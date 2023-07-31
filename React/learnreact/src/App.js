@@ -9,6 +9,7 @@ import Counter from './components/Counter';
 import Forms from './components/Forms';
 import List from './components/List';
 import { useForm } from './components/useForm';
+import { Theme } from './components/Theme';
 
 const App = () => {
   const [value, handleChange] = useForm({
@@ -30,10 +31,12 @@ const App = () => {
     //   {/* <button onClick={resetName}>Reset</button> */}
     //   {/* <button onClick={()=>setName("")}>Reset</button> --------------- if it is single return */}
     // </div>
-    <div>
-      <input type="text" name='name' value={value.name} onChange={handleChange} />
-      <input type="email" name='email' value={value.email} onChange={handleChange} />
-    </div>
+    <Theme />
+    // <div>
+    //   <Counter />
+    //   <input type="text" name='name' value={value.name} onChange={handleChange} />
+    //   <input type="email" name='email' value={value.email} onChange={handleChange} />
+    // </div>
   );
 }
 

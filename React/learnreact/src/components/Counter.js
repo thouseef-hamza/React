@@ -10,9 +10,13 @@ class Counter extends Component{
           })
      };
      onDecrement = () => {
-          this.setState({   
-               counter : this.state.counter - 1
-          })
+          if (this.state.counter > 0){
+               this.setState({   
+                    counter : this.state.counter - 1
+               })
+          }else{
+               alert("Counter can't be zero")
+          }
      }
      render(){
           return(

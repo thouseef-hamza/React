@@ -1,9 +1,16 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class Theme extends Component {
-  render() {
-    return (
-      <div>Theme</div>
-    )
-  }
+const white={backgroundColor:"white"}
+const dark = {
+  backgroundColor: "black",
+  width: '100%',
+  height: '100vh',  
+}
+export const Theme = () => {
+  const [theme,setTheme] = useState(white)
+  return (
+    <div  style={theme}>
+      <button  onClick={()=> theme===white? setTheme(dark) : setTheme(white)}> {theme===white? "Switch to Dark" : "Switch to White"}</button>
+    </div>
+  )
 }
