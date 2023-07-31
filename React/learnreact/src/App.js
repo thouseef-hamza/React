@@ -10,6 +10,8 @@ import Forms from './components/Forms';
 import List from './components/List';
 import { useForm } from './components/useForm';
 import { Theme } from './components/Theme';
+import { Fetch } from './components/Fetch';
+import { CounterTwo } from './components/CounterTwo';
 
 const App = () => {
   const [value, handleChange] = useForm({
@@ -31,16 +33,59 @@ const App = () => {
     //   {/* <button onClick={resetName}>Reset</button> */}
     //   {/* <button onClick={()=>setName("")}>Reset</button> --------------- if it is single return */}
     // </div>
-    <Theme />
     // <div>
     //   <Counter />
     //   <input type="text" name='name' value={value.name} onChange={handleChange} />
     //   <input type="email" name='email' value={value.email} onChange={handleChange} />
     // </div>
+    <CounterTwo />
+    // Assignments -=======================================================>
+
+    // <Theme />
+    // <Fetch />
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // class App extends Component {
 //   state = {
 //      myString : "Hello Thousi" ,
@@ -65,3 +110,4 @@ export default App;
 //   }
 // }
 // export default App
+
